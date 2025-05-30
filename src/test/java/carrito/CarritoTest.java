@@ -15,6 +15,8 @@ class CarritoTest {
     private Carrito carrito;
     private Producto p1, p2;
 
+
+    // Preparación de datos antes de cada prueba
     @BeforeEach
     void setUp() {
         carrito = new Carrito();
@@ -22,6 +24,7 @@ class CarritoTest {
         p2 = new Producto("P02", "Cuaderno", 2.00);
     }
 
+    // Prueba de agregar un producto al carrito
     @Test
     void agregarYCalcularTotal() {
         carrito.agregarProducto(p1, 2);
@@ -29,6 +32,7 @@ class CarritoTest {
         assertEquals(1.50*2 + 2.00, carrito.calcularTotal());
     }
 
+    // Prueba de eliminar un producto
     @Test
     void eliminarProducto() {
         carrito.agregarProducto(p1, 1);
@@ -36,6 +40,7 @@ class CarritoTest {
         assertEquals(0, carrito.calcularTotal());
     }
 
+    // Prueba de modificar cantidad de un producto
     @Test
     void modificarCantidadYTotal() {
         carrito.agregarProducto(p2, 5);
@@ -43,6 +48,7 @@ class CarritoTest {
         assertEquals(4.00, carrito.calcularTotal());
     }
 
+    // Prueba de modificar cantidad de un producto no existente
     @Test
     void modificarCantidadProductoNoExistenteLanzaError() {
         assertThrows(NoSuchElementException.class,

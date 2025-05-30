@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductoTest {
 
+    // Prueba de creación de un Producto y verificación de sus atributos
     @Test
     void crearProductoYGetters() {
         Producto p = new Producto("P01", "Lapicero", 1.50);
